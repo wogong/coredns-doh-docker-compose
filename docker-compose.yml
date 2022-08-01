@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  coredns-doh:
+    image: coredns/coredns:latest
+    container_name: coredns-doh
+    restart: always
+    ports:
+      - "443:443/tcp"
+    volumes:
+      - './config/Corefile:/Corefile'
+      - './config/fullchain.pem:/fullchain.pem'
+      - './config/key.pem:/key.pem'
+      - './config/ca.pem:/ca.pem'

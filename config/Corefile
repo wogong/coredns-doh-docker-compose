@@ -1,0 +1,7 @@
+https://.:443 {
+    tls ./fullchain.pem ./key.pem ./ca.pem
+    whoami
+    forward . tls://1.1.1.1
+    log
+    errors
+}
